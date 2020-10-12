@@ -1,13 +1,8 @@
 import React from 'react'
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+import {Alert} from "../common/functions"
 
 const Toast = ({ isToastOpen, setToastOpen, text }) => {
-  console.log("isToastOpen", isToastOpen)
   return (
     <Snackbar
       anchorOrigin={{

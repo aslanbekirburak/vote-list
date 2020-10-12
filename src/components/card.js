@@ -114,7 +114,6 @@ const Content = styled.div`
 
 const Card = ({ vote, title, link, downVote, upVote, deleteElement }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  console.log("title", title);
   return (
     <Container>
       <Remove onClick={() => setModalOpen(true)}>

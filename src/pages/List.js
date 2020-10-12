@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { handleSetOrder, deleteElement } from "../common/functions";
+import { handleSetOrder } from "../common/functions";
 import { voteTypes } from "../common/constants";
 import styled from "styled-components";
 import Pagination from "@material-ui/lab/Pagination";
@@ -34,12 +34,12 @@ const List = () => {
       await setOldData(storedNames);
     };
     fetchData();
-    setActivePage(oldData.slice(0, 5));
+    setActivePage(oldData?.slice(0, 5));
   }, []);
 
   useEffect(() => {
     let sortedList = handleSetOrder(oldData, order);
-    setActivePage(sortedList.slice(0, 5));
+    setActivePage(sortedList?.slice(0, 5));
     setPage(1);
   }, [order]);
 
@@ -62,7 +62,7 @@ const List = () => {
 
   const handlePageChange = (event, value) => {
     setPage(value);
-    setActivePage(oldData.slice((value - 1) * 5, value * 5));
+    setActivePage(oldData?.slice((value - 1) * 5, value * 5));
   };
 
   const deleteElement = (elementToDelete) => {

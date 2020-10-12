@@ -72,10 +72,10 @@ const EnterUrl = () => {
 
   const handleSave = async () => {
     if(dataToSave?.name && dataToSave?.url){
-    await setOldData((oldArr) => [...oldArr, dataToSave]);
+    setOldData((oldArr) => [...oldArr, dataToSave]);
     let tempArr = oldData;
     tempArr.unshift(dataToSave);
-    await localStorage.setItem("names", JSON.stringify(tempArr));
+    localStorage.setItem("names", JSON.stringify(tempArr));
     setToastOpen(true);
     }else{
       setErrorOpen(true);
